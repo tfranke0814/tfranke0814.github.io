@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Tyson Franke</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="sticky-header" id="stickyHeader">
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">
+                    <div class="logo-icon">TF</div>
+                    <span class="logo-text">Tyson Franke</span>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="skills.html" class="active">Skills</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <h1>Skills & Technologies</h1>
+            <p>My technical expertise and capabilities</p>
+        </div>
+    </header>
+
+    <section class="skills">
+        <div class="container">
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Frontend Development</h3>
+                    <p>HTML5, CSS3, JavaScript (ES6+), React, Vue.js, TypeScript, Responsive Design, Sass/SCSS, Bootstrap, Tailwind CSS</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Backend Development</h3>
+                    <p>Node.js, Python, PHP, Express.js, Django, Flask, RESTful APIs, GraphQL, Database Design, SQL</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Database Technologies</h3>
+                    <p>MongoDB, PostgreSQL, MySQL, Redis, Firebase, Database Optimization, Data Modeling</p>
+                </div>
+                <div class="skill-card">
+                    <h3>DevOps & Tools</h3>
+                    <p>Git, Docker, AWS, CI/CD Pipelines, Linux, Nginx, Apache, Cloud Computing</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Mobile Development</h3>
+                    <p>React Native, Progressive Web Apps (PWA), Mobile-first Design, Cross-platform Development</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Design & UX</h3>
+                    <p>Figma, Adobe Creative Suite, User Interface Design, User Experience, Prototyping, Wireframing</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Testing & Quality</h3>
+                    <p>Jest, Cypress, Unit Testing, Integration Testing, Test-Driven Development, Code Reviews</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Project Management</h3>
+                    <p>Agile Methodologies, Scrum, JIRA, Trello, Team Collaboration, Technical Documentation</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 60px; text-align: center;">
+                <h2 class="section-title">Proficiency Levels</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
+                    <div class="skill-card">
+                        <h3>Expert Level</h3>
+                        <p style="color: #34d399;">HTML, CSS, JavaScript, React, Node.js, Git</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Advanced Level</h3>
+                        <p style="color: #60a5fa;">Python, TypeScript, MongoDB, AWS, Docker</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Intermediate Level</h3>
+                        <p style="color: #fbbf24;">Vue.js, PHP, PostgreSQL, GraphQL, Testing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Tyson Franke. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sticky header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('stickyHeader');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

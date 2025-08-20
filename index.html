@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tyson Franke - Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="sticky-header" id="stickyHeader">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">TF</div>
+                    <span class="logo-text">Tyson Franke</span>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="pages/about.html">About</a></li>
+                        <li><a href="pages/skills.html">Skills</a></li>
+                        <li><a href="pages/projects.html">Projects</a></li>
+                        <li><a href="pages/contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <header class="hero-section">
+        <div class="container">
+            <h1>Tyson Franke</h1>
+            <p>Full Stack Developer & Problem Solver</p>
+        </div>
+    </header>
+
+    <section class="about">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <div class="profile-img" style="margin-bottom: 40px;">TF</div>
+                <h2 style="font-size: 2.5rem; margin-bottom: 30px; color: #f1f5f9;">Welcome to My Portfolio</h2>
+                <p style="font-size: 1.3rem; color: #cbd5e1; margin-bottom: 30px; line-height: 1.8;">
+                    I'm a passionate full-stack developer who loves creating innovative solutions and beautiful user experiences. 
+                    Explore my work, skills, and get to know more about my journey in software development.
+                </p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin: 60px 0;">
+                    <a href="pages/about.html" style="text-decoration: none;">
+                        <div class="skill-card" style="transition: all 0.3s; cursor: pointer;">
+                            <h3 style="color: #60a5fa;">👋 About Me</h3>
+                            <p>Learn about my background, journey, and what drives me as a developer.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="pages/skills.html" style="text-decoration: none;">
+                        <div class="skill-card" style="transition: all 0.3s; cursor: pointer;">
+                            <h3 style="color: #60a5fa;">🛠️ Skills</h3>
+                            <p>Discover my technical expertise and the technologies I work with.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="pages/projects.html" style="text-decoration: none;">
+                        <div class="skill-card" style="transition: all 0.3s; cursor: pointer;">
+                            <h3 style="color: #60a5fa;">🚀 Projects</h3>
+                            <p>Explore my portfolio of projects and see my work in action.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="pages/contact.html" style="text-decoration: none;">
+                        <div class="skill-card" style="transition: all 0.3s; cursor: pointer;">
+                            <h3 style="color: #60a5fa;">📬 Contact</h3>
+                            <p>Get in touch for collaborations, opportunities, or just to say hello.</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div style="margin-top: 60px; padding: 40px; background: rgba(59, 130, 246, 0.1); border-radius: 15px; border: 1px solid rgba(59, 130, 246, 0.2);">
+                    <h3 style="color: #60a5fa; margin-bottom: 20px; font-size: 1.5rem;">💡 What I Do</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left;">
+                        <div>
+                            <h4 style="color: #f1f5f9; margin-bottom: 10px;">🌐 Web Development</h4>
+                            <p style="color: #cbd5e1; font-size: 0.95rem;">Creating responsive, modern web applications with clean code and great user experiences.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: #f1f5f9; margin-bottom: 10px;">📱 Mobile Apps</h4>
+                            <p style="color: #cbd5e1; font-size: 0.95rem;">Building cross-platform mobile applications that work seamlessly across devices.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: #f1f5f9; margin-bottom: 10px;">⚙️ Backend Systems</h4>
+                            <p style="color: #cbd5e1; font-size: 0.95rem;">Developing robust APIs, databases, and server-side solutions for scalable applications.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: #f1f5f9; margin-bottom: 10px;">🎨 UI/UX Design</h4>
+                            <p style="color: #cbd5e1; font-size: 0.95rem;">Designing intuitive interfaces that prioritize user experience and accessibility.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Tyson Franke. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sticky header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('stickyHeader');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

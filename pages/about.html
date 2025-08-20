@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Tyson Franke</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="sticky-header" id="stickyHeader">
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">
+                    <div class="logo-icon">TF</div>
+                    <span class="logo-text">Tyson Franke</span>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html" class="active">About</a></li>
+                        <li><a href="skills.html">Skills</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <h1>About Me</h1>
+            <p>Get to know Tyson Franke</p>
+        </div>
+    </header>
+
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="profile-img">TF</div>
+                <div>
+                    <h2>Hello! I'm Tyson Franke</h2>
+                    <p>I'm a passionate developer with a love for creating innovative solutions and beautiful user experiences. I enjoy working with modern technologies and am always eager to learn new skills.</p>
+                    <p>With experience in both frontend and backend development, I bring ideas to life through clean, efficient code and thoughtful design. I'm particularly interested in web development, mobile applications, and emerging technologies.</p>
+                    <p>When I'm not coding, you can find me exploring new technologies, contributing to open source projects, or enjoying outdoor activities. I believe in continuous learning and staying up-to-date with the latest industry trends.</p>
+                    
+                    <h3 style="color: #60a5fa; margin-top: 30px; margin-bottom: 15px;">My Journey</h3>
+                    <p>My journey into software development began with curiosity about how things work behind the scenes. What started as a hobby quickly became a passion, leading me to pursue formal education and hands-on experience in various technologies.</p>
+                    
+                    <h3 style="color: #60a5fa; margin-top: 30px; margin-bottom: 15px;">What Drives Me</h3>
+                    <p>I'm driven by the challenge of solving complex problems and the satisfaction of creating something that makes a difference. Whether it's building a user-friendly interface or optimizing backend performance, I approach each project with dedication and attention to detail.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Tyson Franke. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sticky header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('stickyHeader');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
