@@ -253,6 +253,11 @@ section {
     border-color: #228bff;
 }
 
+.project-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .project-img {
     height: 200px;
     background: linear-gradient(45deg, #1c4ed8, #4338ca);
@@ -261,6 +266,14 @@ section {
     justify-content: center;
     color: white;
     font-size: 2rem;
+    overflow: hidden;
+}
+
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
 }
 
 .project-content {
