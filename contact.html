@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Tyson Franke</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="sticky-header" id="stickyHeader">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">TF</div>
+                    <span class="logo-text">Tyson Franke</span>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="skills.html">Skills</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <h1>Get In Touch</h1>
+            <p>Let's connect and discuss opportunities</p>
+        </div>
+    </header>
+
+    <section class="theme-dark">
+        <div class="container">
+            <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <p style="font-size: 1.3rem; margin-bottom: 60px; color: #cbd5e1;">I'm always interested in new opportunities and collaborations. Feel free to reach out!</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px;">
+                    <a href="mailto:tyson@example.com" style="text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <div style="background: rgba(255,255,255,0.1); padding: 40px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.2); text-align: center; height: 200px; display: flex; flex-direction: column; justify-content: center;">
+                            <div style="font-size: 3rem; margin-bottom: 20px;">✉️</div>
+                            <h3 style="color: #f8fafc; margin-bottom: 15px; font-size: 1.5rem;">Email</h3>
+                            <p style="color: #93c5fd; font-size: 1.1rem; font-weight: 500;">tyson@example.com</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://linkedin.com/in/tysonfranke" target="_blank" style="text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <div style="background: rgba(255,255,255,0.1); padding: 40px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.2); text-align: center; height: 200px; display: flex; flex-direction: column; justify-content: center;">
+                            <div style="font-size: 3rem; margin-bottom: 20px;">💼</div>
+                            <h3 style="color: #f8fafc; margin-bottom: 15px; font-size: 1.5rem;">LinkedIn</h3>
+                            <p style="color: #93c5fd; font-size: 1.1rem; font-weight: 500;">Connect with me</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://github.com/tysonfranke" target="_blank" style="text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <div style="background: rgba(255,255,255,0.1); padding: 40px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.2); text-align: center; height: 200px; display: flex; flex-direction: column; justify-content: center;">
+                            <div style="font-size: 3rem; margin-bottom: 20px;">🐙</div>
+                            <h3 style="color: #f8fafc; margin-bottom: 15px; font-size: 1.5rem;">GitHub</h3>
+                            <p style="color: #93c5fd; font-size: 1.1rem; font-weight: 500;">View my code</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Tyson Franke. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sticky header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('stickyHeader');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
