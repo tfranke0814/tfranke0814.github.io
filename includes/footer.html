@@ -36,3 +36,43 @@
     </div>
   </div>
 </footer>
+
+<script>
+  (function () {
+    function setupMenu() {
+      const btn = document.querySelector(".menu-toggle");
+      const header = document.querySelector(".sticky-header");
+      if (!btn || !header) return;
+
+      btn.addEventListener("click", (e) => {
+        const isOpen = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!isOpen));
+        header.classList.toggle("nav-open", !isOpen);
+      });
+
+      // close when resizing to desktop
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 768 && header.classList.contains("nav-open")) {
+          header.classList.remove("nav-open");
+          const btn = document.querySelector(".menu-toggle");
+          if (btn) btn.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      // optional: close when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!header.classList.contains("nav-open")) return;
+        if (header.contains(e.target)) return;
+        header.classList.remove("nav-open");
+        if (btn) btn.setAttribute("aria-expanded", "false");
+      });
+    }
+
+    // setup after footer is injected (footer content might be loaded via fetch)
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", setupMenu);
+    } else {
+      setupMenu();
+    }
+  })();
+</script>
