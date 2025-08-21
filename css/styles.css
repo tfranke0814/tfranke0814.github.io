@@ -173,17 +173,17 @@ section {
 }
 
 .info-card {
-    margin-top: 60px;
     padding: 40px;
-    background: rgba(59, 130, 246, 0.1); /* blue-500 @ 10% */
+    background: rgba(59, 130, 246, 0.1);
     border-radius: 15px;
     border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 .info-card h3 {
-    color: #60a5fa; /* blue-300 */
+    color: #60a5fa;
     margin-bottom: 20px;
     font-size: 1.5rem;
+    text-align: center;
 }
 
 .info-grid {
