@@ -75,20 +75,10 @@ fetch("/includes/footer.html")
 
 // Sticky header scroll effect
 window.addEventListener("scroll", function () {
-const header = document.getElementById("stickyHeader");
-if (window.scrollY > 50) {
-    header.classList.add("scrolled");
-} else {
-    header.classList.remove("scrolled");
-}
-});
-
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-        behavior: "smooth",
-        });
-    });
+    const header = document.getElementById("stickyHeader");
+    if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
 });
