@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact - Tyson Franke</title>
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
   </head>
   <body>
     <div class="sticky-header" id="stickyHeader">
       <div class="container">
         <div class="header-content">
-          <a href="index.html" class="logo">
+          <a href="/" class="logo">
             <div class="logo-icon">TF</div>
             <span class="logo-text">Tyson Franke</span>
           </a>
@@ -24,11 +24,11 @@
           </button>
           <nav id="main-nav">
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="skills.html">Skills</a></li>
-              <li><a href="projects.html">Projects</a></li>
-              <li><a href="contact.html" class="active">Contact</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/skills/">Skills</a></li>
+              <li><a href="/projects/">Projects</a></li>
+              <li><a href="/contact/" class="active">Contact</a></li>
             </ul>
           </nav>
         </div>
@@ -215,7 +215,7 @@
         });
       }
 
-      fetch("includes/footer.html")
+      fetch("../includes/footer.html")
         .then((response) => response.text())
         .then((html) => {
           document.getElementById("footer-placeholder").innerHTML = html;

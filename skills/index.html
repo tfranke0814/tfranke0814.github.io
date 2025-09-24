@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Skills - Tyson Franke</title>
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
   </head>
   <body>
     <div class="sticky-header" id="stickyHeader">
       <div class="container">
         <div class="header-content">
-          <a href="index.html" class="logo">
+          <a href="/" class="logo">
             <div class="logo-icon">TF</div>
             <span class="logo-text">Tyson Franke</span>
           </a>
@@ -24,11 +24,11 @@
           </button>
           <nav id="main-nav">
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="skills.html" class="active">Skills</a></li>
-              <li><a href="projects.html">Projects</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/skills/" class="active">Skills</a></li>
+              <li><a href="/projects/">Projects</a></li>
+              <li><a href="/contact/">Contact</a></li>
             </ul>
           </nav>
         </div>
@@ -47,26 +47,21 @@
         <div class="skills-grid">
           <div class="skill-card">
             <h3>Backend Development</h3>
-            <p>
-              Python, Node.js, FastAPI, RESTful APIs
-            </p>
+            <p>Python, Node.js, FastAPI, RESTful APIs</p>
           </div>
-            <div class="skill-card">
+          <div class="skill-card">
             <h3>Agentic Frameworks</h3>
-            <p>
-              LangChain, LangGraph, Google ADK, RAG, Vertex AI, MCP, A2A
-            </p>
+            <p>LangChain, LangGraph, Google ADK, RAG, Vertex AI, MCP, A2A</p>
           </div>
           <div class="skill-card">
             <h3>Database Technologies</h3>
-            <p>
-              PostgreSQL, Redis, Firestore
-            </p>
+            <p>PostgreSQL, Redis, Firestore</p>
           </div>
           <div class="skill-card">
             <h3>DevOps & Tools</h3>
             <p>
-              Git, GCP (Cloud Run, Cloud Storage, Compute Engine), CI/CD (Familiar with GitHub Actions)
+              Git, GCP (Cloud Run, Cloud Storage, Compute Engine), CI/CD
+              (Familiar with GitHub Actions)
             </p>
           </div>
         </div>
@@ -83,21 +78,15 @@
           >
             <div class="skill-card">
               <h3>Expert Level</h3>
-              <p style="color: #34d399">
-                Python, Git
-              </p>
+              <p style="color: #34d399">Python, Git</p>
             </div>
             <div class="skill-card">
               <h3>Advanced Level</h3>
-              <p style="color: #60a5fa">
-                JavaScript, LangChain/LangGraph GCP
-              </p>
+              <p style="color: #60a5fa">JavaScript, LangChain/LangGraph GCP</p>
             </div>
             <div class="skill-card">
               <h3>Intermediate Level</h3>
-              <p style="color: #fbbf24">
-                PostgreSQL, Redis, CI/CD, MCP, A2A
-              </p>
+              <p style="color: #fbbf24">PostgreSQL, Redis, CI/CD, MCP, A2A</p>
             </div>
           </div>
         </div>
@@ -145,7 +134,7 @@
         });
       }
 
-      fetch("includes/footer.html")
+      fetch("../includes/footer.html")
         .then((response) => response.text())
         .then((html) => {
           document.getElementById("footer-placeholder").innerHTML = html;
