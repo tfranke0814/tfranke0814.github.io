@@ -1,6 +1,22 @@
-// main script for footer and header menu
+// main script for footer and navbar header menu
 // functions
-function initHeaderMenu() {
+function setActiveNavItem() {
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('nav a');
+    
+    // Remove active class from all links
+    navLinks.forEach(link => link.classList.remove('active'));
+    
+    // Add active class to current page link
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPath || (currentPath.startsWith(href) && href !== '/')) {
+            link.classList.add('active');
+        }
+    });
+}
+
+function initStickyHeaderMenu() {
     const btn = document.querySelector(".menu-toggle");
     const header = document.querySelector(".sticky-header");
     if (!btn || !header) return;
@@ -41,11 +57,19 @@ function initHeaderMenu() {
     });
 }
 
-fetch("../includes/footer.html")
+// load navbar and footer
+fetch("/includes/navbar.html")
+.then((response) => response.text())
+.then((html) => {
+    document.getElementById("navbar-placeholder").innerHTML = html;
+    setActiveNavItem();
+    initStickyHeaderMenu();
+});
+
+fetch("/includes/footer.html")
 .then((response) => response.text())
 .then((html) => {
     document.getElementById("footer-placeholder").innerHTML = html;
-    initHeaderMenu();
 })
 .catch((error) => console.error("Error loading footer:", error));
 
