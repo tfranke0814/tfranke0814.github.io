@@ -4,36 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact - Tyson Franke</title>
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
   </head>
   <body>
-    <div class="sticky-header" id="stickyHeader">
-      <div class="container">
-        <div class="header-content">
-          <a href="index.html" class="logo">
-            <div class="logo-icon">TF</div>
-            <span class="logo-text">Tyson Franke</span>
-          </a>
-          <button
-            class="menu-toggle"
-            aria-controls="main-nav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="menu-icon" aria-hidden="true"></span>
-          </button>
-          <nav id="main-nav">
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="skills.html">Skills</a></li>
-              <li><a href="projects.html">Projects</a></li>
-              <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
+    <div id="navbar-placeholder"></div>
 
     <header>
       <div class="container">
@@ -175,73 +149,6 @@
     </section>
 
     <div id="footer-placeholder"></div>
-
-    <script>
-      function initHeaderMenu() {
-        const btn = document.querySelector(".menu-toggle");
-        const header = document.querySelector(".sticky-header");
-        if (!btn || !header) return;
-
-        btn.addEventListener("click", (e) => {
-          const isOpen = btn.getAttribute("aria-expanded") === "true";
-          btn.setAttribute("aria-expanded", String(!isOpen));
-          header.classList.toggle("nav-open", !isOpen);
-          e.stopPropagation();
-        });
-
-        window.addEventListener("resize", () => {
-          if (
-            window.innerWidth > 768 &&
-            header.classList.contains("nav-open")
-          ) {
-            header.classList.remove("nav-open");
-            btn.setAttribute("aria-expanded", "false");
-          }
-        });
-
-        document.addEventListener("click", (e) => {
-          if (!header.classList.contains("nav-open")) return;
-          if (header.contains(e.target)) return;
-          header.classList.remove("nav-open");
-          btn.setAttribute("aria-expanded", "false");
-        });
-
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape" && header.classList.contains("nav-open")) {
-            header.classList.remove("nav-open");
-            btn.setAttribute("aria-expanded", "false");
-            btn.focus();
-          }
-        });
-      }
-
-      fetch("includes/footer.html")
-        .then((response) => response.text())
-        .then((html) => {
-          document.getElementById("footer-placeholder").innerHTML = html;
-          initHeaderMenu();
-        })
-        .catch((error) => console.error("Error loading footer:", error));
-
-      // Sticky header scroll effect
-      window.addEventListener("scroll", function () {
-        const header = document.getElementById("stickyHeader");
-        if (window.scrollY > 50) {
-          header.classList.add("scrolled");
-        } else {
-          header.classList.remove("scrolled");
-        }
-      });
-
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-          });
-        });
-      });
-    </script>
+    <script src="../main.js"></script>
   </body>
 </html>
