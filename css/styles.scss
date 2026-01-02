@@ -1,0 +1,43 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+@use "./navbar";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    color: $color-text;
+    background: $color-bg;
+}
+
+header {
+    @include flexCenter;
+
+    background: $gradient-scheme;
+    height: 200px;
+
+    h1 {
+        font-size: 2.5rem;
+    }
+    p {
+        font-size: 1.2rem;
+        color: $color-text-muted;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header-container {
+    @extend .container;
+    margin-top: 55px;
+}
+

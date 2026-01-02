@@ -1,0 +1,7 @@
+// Mixins
+@mixin flexCenter($justify: center, $text: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+    text-align: $text;
+}
