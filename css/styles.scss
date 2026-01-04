@@ -1,6 +1,7 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 @use "./navbar";
+@use "./footer";
 
 * {
     margin: 0;
@@ -20,13 +21,20 @@ header {
 
     background: $gradient-scheme;
     height: 200px;
+    border-bottom: $border;
 
     h1 {
         font-size: 2.5rem;
+        @include mobile {
+            font-size: 2rem;
+        }
     }
     p {
         font-size: 1.2rem;
         color: $color-text-muted;
+        @include mobile {
+            font-size: 1rem;
+        }
     }
 }
 
@@ -40,4 +48,3 @@ header {
     @extend .container;
     margin-top: 55px;
 }
-

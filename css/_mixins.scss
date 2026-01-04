@@ -5,3 +5,9 @@
     align-items: center;
     text-align: $text;
 }
+
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}

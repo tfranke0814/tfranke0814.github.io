@@ -5,105 +5,110 @@
     position: fixed;
     background: rgba($color-navbar-bg, 0.80);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba($color-border, 0.4);
+    border-bottom: $border;
     transition: all 0.3s ease;
+    width: 100%;
+    z-index: 1000;
 
     &.scrolled{
         background: rgba($color-navbar-bg, 0.85);
         box-shadow: 0 4px 30px rgba($color-shadow, 0.4);
     }
 }
+.header-content {
+   @include flexCenter($justify: space-between, $text: left);
+    padding: 10px 0;
 
-// Dropdown for Mobile
+    // Nav
+    nav {
+        @include mobile {
+            position: absolute;
+            right: 20px; 
+            top: 65px;
+        }
+
+        a {
+            display: block;
+            &:hover{
+                color: $color-navbar-anchor;
+                background: rgba($color-navbar-anchor, 0.09);
+            }
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 10px;
+
+            @include mobile {
+                display: none;
+                flex-direction: column;
+                width: 180px;
+                background: $color-nav-dropdown;
+                border-radius: 10px;
+                padding: 8px;
+                box-shadow: 0 8px 30px rgba($color-shadow,0.8);
+                border: $border;
+            }
+        }
+    }
+    a{
+        text-decoration: none;
+        color: $color-text-muted;
+        padding: 8px 16px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
+        
+        &.active{
+            color: $color-navbar-anchor;
+            background: rgba($color-navbar-anchor, 0.2);
+        }
+
+    }
+}
+@include mobile {
+    .nav-open nav ul { display: flex; }
+}
+
+// Dropdown button for Mobile
 .menu-toggle {
     @include flexCenter;
     display: none;
-    @media (max-width: 768px) {
-        display: inline-flex;
-    }
     background: transparent;
     width: 40px;
     height: 40px;
     border-radius: 8px;
     cursor: pointer;
 
+    @include mobile {
+        display: inline-flex;
+    }
     &:focus{ 
         outline: 2px solid rgba($color-navbar-anchor,0.12);
     }
 }
-// .menu-icon {
-//     &::before
-//     &::after {
-//         display: block;
-//         width: 20px;
-//         height: 2px;
-//         background: #94a3b8;
-//         border-radius: 2px;
-//         position: relative;
-//     }
-//     &::before
-//     &::after { 
-//         content: "";
-//         position: absolute;
-//         left: 0;
-//     }
-//     &::before {
-//         top: -6px;
-//     }
-//     &::after{
-//         top: -6px;
-//     }
-// }
 
-// What is this Voodoo magic
-.menu-icon,
-.menu-icon::before,
-.menu-icon::after {
+.menu-icon {
+  position: relative;
+
+  &,
+  &::before,
+  &::after {
     display: block;
     width: 20px;
-    height: 2px;
+    height: 3px;
     background: #94a3b8;
     border-radius: 2px;
-    position: relative;
-}
-.menu-icon::before,
-.menu-icon::after { content: ""; position: absolute; left: 0; }
-.menu-icon::before { top: -6px; }
-.menu-icon::after { top: 6px; }
+  }
 
-.header-content {
-   @include flexCenter($justify: space-between, $text: left);
-    padding: 10px 0;
-    nav {
-        ul {
-            list-style: none;
-            display: flex;
-            gap: 10px;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+  }
 
-            @media (max-width: 768px) {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
-        a{
-            text-decoration: none;
-            color: $color-text-muted;
-            padding: 8px 16px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            // position: relative;
-            font-size: 0.95rem;
-            
-            &:hover{
-                color: $color-navbar-anchor;
-                background: rgba($color-navbar-anchor, 0.09);
-            }
-            &.active{
-                color: $color-navbar-anchor;
-                background: rgba($color-navbar-anchor, 0.2);
-            }
-        }
-    }
+  &::before { top: -7px; }
+  &::after  { top: 7px; }
 }
 
 // Logo
@@ -113,6 +118,10 @@
     gap: 12px;
     text-decoration: none;
     transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateX(5px);
+    }
 }
 .logo-text {
     color: $color-text;

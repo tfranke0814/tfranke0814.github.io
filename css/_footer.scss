@@ -1,0 +1,36 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+footer {
+    background: $color-footer-bg;
+    border-top: $border;
+    padding: 30px 0;
+    color: $color-text-footer;
+    margin-top: 40px;
+}
+
+.footer-content {
+    @include flexCenter;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.social-links {
+    @include flexCenter;
+    gap: 20px;
+
+    a {
+        color: $color-text-footer;
+        transition: color 0.3s ease;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%; 
+        background: $color-footer-anchor;
+    }
+    svg {
+        width: 25px;
+        height: 25px;
+        fill: currentColor;
+        display: block;
+    }
+}

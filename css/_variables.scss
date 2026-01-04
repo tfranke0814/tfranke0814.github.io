@@ -1,9 +1,17 @@
 // Variables
 $color-text: rgb(238, 238, 238);
 $color-text-muted: rgb(148, 163, 184);
-$color-bg: #111827;
-$color-navbar-bg: rgb(10, 15, 28);
-$color-navbar-anchor: rgb(34, 139, 255);
-$color-border: rgba(107, 115, 123, 0.4);
+$color-bg: #0f172a;
 $color-shadow: black;
 $gradient-scheme: linear-gradient(135deg, #1e40af 0%, #5f045f 100%);
+
+$border: 1px solid rgba(107, 115, 123, 0.4);
+
+// Navbar
+$color-navbar-bg: rgb(10, 15, 28);
+$color-navbar-anchor: rgb(34, 139, 255);
+$color-nav-dropdown: rgba(0, 0, 0, 0.95);
+// Footer
+$color-footer-bg: rgb(12, 18, 32);
+$color-text-footer: #586578;
+$color-footer-anchor: rgba(255, 255, 255, 0.05)
