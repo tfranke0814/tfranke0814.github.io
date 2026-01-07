@@ -1,7 +1,7 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 @use "./navbar";
-@use "./footer" as foot;
+@use "./footer";
 @use "./home";
 
 * {
@@ -18,6 +18,29 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+
+    h2 {
+        @include faded-edge(50px);
+        color: $color-text; 
+        background-color: black;
+        margin-bottom: 15px;
+        @include mobile {
+            font-size: 1rem
+        }
+    }
+    h3 {
+        @include faded-edge(50px);
+        color: $color-text-secondary; 
+        background-color: black;
+        margin-top: 30px; 
+        margin-bottom: 15px;
+    }
+    p {
+        text-align: left;
+        font-size: 1rem;
+        text-indent: 2rem;
+        margin-bottom: 0.5rem;
+    }
 }
 
 header {
