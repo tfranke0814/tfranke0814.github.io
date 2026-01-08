@@ -3,6 +3,7 @@
 @use "./navbar";
 @use "./footer";
 @use "./home";
+@use "./projects";
 
 * {
     margin: 0;
@@ -18,29 +19,6 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-
-    h2 {
-        @include faded-edge(50px);
-        color: $color-text; 
-        background-color: black;
-        margin-bottom: 15px;
-        @include mobile {
-            font-size: 1rem
-        }
-    }
-    h3 {
-        @include faded-edge(50px);
-        color: $color-text-secondary; 
-        background-color: black;
-        margin-top: 30px; 
-        margin-bottom: 15px;
-    }
-    p {
-        text-align: left;
-        font-size: 1rem;
-        text-indent: 2rem;
-        margin-bottom: 0.5rem;
-    }
 }
 
 header {
@@ -59,6 +37,7 @@ header {
     p {
         font-size: 1.2rem;
         color: $color-text-muted;
+        text-indent: 0%;
         @include mobile {
             font-size: 1rem;
         }
@@ -83,4 +62,62 @@ section {
 
 main {
   flex-grow: 1;
+}
+
+.about-content {
+    h2, h3 { position: relative; }
+
+    h2::after {
+        content: "";
+        @include faded-underline($color-text);
+    }
+
+    h3 {
+        color: $color-text-secondary; 
+        margin-top: 30px; 
+    }
+    h3::after {
+        content: "";
+        @include faded-underline($color-text-secondary);
+    }
+
+    p {
+        text-align: left;
+        font-size: 1rem;
+        text-indent: 2rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+.info-card {
+    flex-direction: column;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 15px;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    padding: 20px;
+
+    h2 {
+        @include flexCenter();
+        gap: 1em;
+        color: $color-text-secondary;
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    a {
+        @include flexCenter($justify: left);
+        gap: 1em;
+        text-decoration: none;
+        color: $color-text;
+        padding: 5px 0;
+        margin-right: auto;
+    }
+
+    svg {
+        width: 25px;
+        height: 25px;
+        fill: currentColor;
+        position: relative;
+    }
 }

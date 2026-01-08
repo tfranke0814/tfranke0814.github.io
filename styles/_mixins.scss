@@ -18,7 +18,8 @@
     @include flexCenter;
     position: relative;
     height: $height;
-    max-width: 700px;
+    max-width: 80vw;
+    min-width: 50vw;
     margin: 0 auto;
     overflow: clip;
 
@@ -33,4 +34,15 @@
                     inset 0px -2px 3px 1px $color-bg;
         z-index: 1;
     }
+}
+
+@mixin faded-underline($color, $height: 4px, $spacing: 6px, $spread: 30%) {
+  $end-stop: 100% - $spread;
+  display: block;
+  height: $height;
+  margin: 0 auto;
+  margin-top: $spacing;
+  margin-bottom: 15px;
+  max-width: 700px;
+  background: linear-gradient(to right, transparent, $color $spread, $color $end-stop, transparent);
 }
