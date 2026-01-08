@@ -34,16 +34,17 @@
                   players with rules and strategies based on their board state.
                 </p>
                 <p>
-                  <strong>Technologies:</strong> Python, FastAPI, LangChain, LangGraph
+                  <strong>Technologies:</strong> Python, FastAPI, LangChain,
+                  LangGraph
                 </p>
                 <div class="btn-grid">
                   <a
                     href="https://github.com/tfranke0814/sail-2025-optcg"
                     target="_blank"
-                    >GitHub</a>
-                  <button>Read More >></button>
+                    >GitHub</a
+                  >
+                  <button id="optcg" class="read-more-btn">Read More >></button>
                 </div>
-                
                 <!-- <p>
                   <strong>Collaboration:</strong>
                   <a href="https://www.linkedin.com/in/youran-wang-8bb611309/"
@@ -86,32 +87,24 @@
               </div>
             </div>
 
-            <div class="project-card">
-            <div class="project-img"><img
-                  src="../images/optcg-sail-demo-cropped.jpg"
-                  alt="One Piece TCG Playline Analyzer"
-                /></div>
-            <div class="project-content">
-              <h3>--Placeholder--</h3>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi,
-                architecto veniam! Vitae dicta est pariatur deserunt neque cum
-                sed eveniet deleniti sit nobis, cupiditate illum temporibus
-                asperiores quod maxime unde inventore. Harum impedit laborum
-                eius.
-              </p>
-              <p>
-                <strong>Technologies:</strong> Lorem ipsum dolor sit amet
-                consectetur adipisicing elit.
-              </p>
-              <div class="project-links">
-                <a href="#" class="btn">--</a>
-                <a href="#" class="btn btn-secondary">--</a>
+            <div id="optcg-modal" class="project-modal hidden">
+              <div class="container">
+                <div class="modal-card">
+                  <button id="optcg" class="close-modal-btn" aria-label="Close">
+                    <svg viewBox="0 0 24 24" class="x-icon">
+                      <path
+                        d="M18 6L6 18M6 6l12 12"
+                        stroke="currentColor"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </button>
+                  <p>optcg</p>
+                </div>
               </div>
             </div>
-          </div>
-          </div>
-        </div>
+
 
         <!-- <div class="container">
           <h2 id="open-source" class="section-title">
@@ -183,12 +176,13 @@
                 </div>
               </div>
             </div> -->
-          <!-- </div>
+        <!-- </div>
         </div> -->
       </section>
     </main>
 
     <div id="footer-placeholder"></div>
     <script src="../main.js"></script>
+    <script src="../scripts/projects.js"></script>
   </body>
 </html>

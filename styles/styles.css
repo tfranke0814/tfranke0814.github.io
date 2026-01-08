@@ -22,7 +22,7 @@
 }
 @media (max-width: 768px) {
   .header-content nav {
-    position: absolute;
+    position: fixed;
     right: 20px;
     top: 65px;
   }
@@ -378,6 +378,49 @@ footer {
 }
 .projects-grid .project-card .project-content .btn-grid a:hover {
   background: #1f2937;
+}
+
+.project-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.6);
+  width: 100vw;
+  height: 100vh;
+}
+.project-modal .modal-card {
+  width: 600px;
+  height: 600px;
+  max-width: 80vw;
+  max-height: 60vh;
+  background-color: rgb(148, 163, 184);
+  position: relative;
+}
+.project-modal .modal-card .close-modal-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.3s;
+}
+.project-modal .modal-card .close-modal-btn:hover {
+  color: #000;
+}
+
+.x-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.hidden {
+  display: none;
 }
 
 * {

@@ -22,7 +22,7 @@
     // Nav
     nav {
         @include mobile {
-            position: absolute;
+            position: fixed;
             right: 20px; 
             top: 65px;
         }

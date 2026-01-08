@@ -1,5 +1,5 @@
-// main script for footer and navbar header menu
-// functions
+// main script
+// functions for nav and footer
 function setActiveNavItem() {
     const currentPath = window.location.pathname;
     const navLinks = document.querySelectorAll('nav a');
@@ -82,3 +82,5 @@ window.addEventListener("scroll", function () {
         header.classList.remove("scrolled");
     }
 });
+
+// Project popup menu
