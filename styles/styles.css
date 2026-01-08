@@ -217,7 +217,6 @@ footer {
   position: relative;
   height: 150px;
   max-width: 80vw;
-  min-width: 50vw;
   margin: 0 auto;
   overflow: clip;
 }
@@ -294,6 +293,93 @@ footer {
   transform: translateX(4px);
 }
 
+.projects-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.projects-grid .project-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: row;
+  gap: 30px;
+  min-height: 200px;
+  height: auto;
+  margin-top: auto;
+  border: 2px outset #1e40af;
+  background-color: rgba(30, 64, 175, 0.25);
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 4px 4px 10px 4px black;
+}
+@media (max-width: 768px) {
+  .projects-grid .project-card {
+    flex-direction: column;
+  }
+}
+.projects-grid .project-card .project-img {
+  padding: 10px;
+}
+.projects-grid .project-card .project-img img {
+  height: 180px;
+  width: 180px;
+  overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px;
+}
+@media (max-width: 768px) {
+  .projects-grid .project-card .project-img img {
+    width: 70vw;
+    height: 60vw;
+  }
+}
+.projects-grid .project-card .project-content h3::after {
+  content: "";
+  display: block;
+  height: 4px;
+  margin: 0 auto;
+  margin-top: 6px;
+  margin-bottom: 15px;
+  max-width: 700px;
+  background: linear-gradient(to right, transparent, #60a5fa 30%, #60a5fa 70%, transparent);
+}
+.projects-grid .project-card .project-content p {
+  text-align: left;
+  margin-bottom: 10px;
+}
+.projects-grid .project-card .project-content .btn-grid {
+  display: flex;
+  margin-right: auto;
+  gap: 10px;
+}
+.projects-grid .project-card .project-content .btn-grid .btn, .projects-grid .project-card .project-content .btn-grid a, .projects-grid .project-card .project-content .btn-grid button {
+  border: 1px solid rgba(107, 115, 123, 0.4);
+  border-radius: 5px;
+  transition: background 0.3s;
+  padding: 8px 16px;
+  color: rgb(238, 238, 238);
+}
+.projects-grid .project-card .project-content .btn-grid button {
+  background-color: #1e40af;
+}
+.projects-grid .project-card .project-content .btn-grid button:hover {
+  background-color: #0b216e;
+}
+.projects-grid .project-card .project-content .btn-grid a {
+  text-decoration: none;
+  background: #374151;
+  font-family: "Courier New", Courier, monospace;
+}
+.projects-grid .project-card .project-content .btn-grid a:hover {
+  background: #1f2937;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -308,6 +394,10 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+body button {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1em;
 }
 
 header {

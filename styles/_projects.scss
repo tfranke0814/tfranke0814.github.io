@@ -1,3 +1,90 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
+.projects-grid {
+    @include flexCenter;
+    flex-direction: column;
+    gap: 20px;
+
+    $min-card-height: 200px;
+    $card-color: #1e40af;
+    .project-card {
+        $card-padding: 10px;
+        @include flexCenter;
+        flex-direction: row;
+        gap: 30px;
+        min-height: 200px;
+        height: auto;
+        margin-top: auto;
+
+        border: 2px outset $card-color;
+        background-color: rgba($card-color, 0.25);
+        padding: $card-padding;
+        border-radius: 15px;
+        box-shadow: 4px 4px 10px 4px $color-shadow;
+
+        @include mobile {
+            flex-direction: column;
+        }
+
+        .project-img {
+            $img-padding: 10px;
+            padding: $img-padding;
+            img {
+                height: ($min-card-height - $card-padding - $img-padding);
+                width: ($min-card-height - $card-padding - $img-padding);
+                overflow: hidden;
+                object-fit: cover;
+                border-radius: 15px;
+                @include mobile {
+                    width: 70vw;
+                    height: 60vw;
+                }
+            }
+        }
+
+        .project-content {
+            h3::after {
+                content: "";
+                @include faded-underline($color-text-secondary);
+            }
+            
+            p {
+                text-align: left;
+                margin-bottom: 10px;
+            }
+            
+            .btn-grid {
+                display: flex;
+                margin-right: auto;
+                gap: 10px;
+                
+                .btn {
+                    border: $border;
+                    border-radius: 5px;
+                    transition: background 0.3s;
+                    padding: 8px 16px;
+                    color: $color-text;
+                }
+                button {
+                    @extend .btn;
+                    background-color: #1e40af;
+
+                    &:hover {
+                        background-color: #0b216e;
+                    }
+                }
+                a {
+                    @extend .btn;
+                    text-decoration: none;
+                    background: #374151;
+                    font-family: $btn-font;
+                    
+                    &:hover {
+                        background: #1f2937;
+                    }
+                }
+            }
+        }
+    }
+}
