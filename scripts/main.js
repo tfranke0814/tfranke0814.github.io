@@ -1,5 +1,33 @@
 // main script
-// functions for nav and footer
+
+// load navbar and footer
+fetch("/includes/navbar.html")
+.then((response) => response.text())
+.then((html) => {
+    document.getElementById("navbar-placeholder").innerHTML = html;
+    setActiveNavItem();
+    initStickyHeaderMenu();
+});
+
+fetch("/includes/footer.html")
+.then((response) => response.text())
+.then((html) => {
+    document.getElementById("footer-placeholder").innerHTML = html;
+})
+.catch((error) => console.error("Error loading footer:", error));
+
+// Sticky header scroll effect
+window.addEventListener("scroll", function () {
+    const header = document.getElementById("stickyHeader");
+    if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
+});
+
+
+// Functions for nav
 function setActiveNavItem() {
     const currentPath = window.location.pathname;
     const navLinks = document.querySelectorAll('nav a');
@@ -56,31 +84,3 @@ function initStickyHeaderMenu() {
         }
     });
 }
-
-// load navbar and footer
-fetch("/includes/navbar.html")
-.then((response) => response.text())
-.then((html) => {
-    document.getElementById("navbar-placeholder").innerHTML = html;
-    setActiveNavItem();
-    initStickyHeaderMenu();
-});
-
-fetch("/includes/footer.html")
-.then((response) => response.text())
-.then((html) => {
-    document.getElementById("footer-placeholder").innerHTML = html;
-})
-.catch((error) => console.error("Error loading footer:", error));
-
-// Sticky header scroll effect
-window.addEventListener("scroll", function () {
-    const header = document.getElementById("stickyHeader");
-    if (window.scrollY > 50) {
-        header.classList.add("scrolled");
-    } else {
-        header.classList.remove("scrolled");
-    }
-});
-
-// Project popup menu

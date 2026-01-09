@@ -1,21 +1,37 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
+$card-color: #1e40af;
+$card-padding: 10px;
+.card-content {
+    display: flex;flex-direction:column;
+            
+    h3::after {
+        content: "";
+        @include faded-underline($color-text-secondary);
+    }
+            
+    p {
+        text-align: left;
+        margin-bottom: 10px;
+    }
+}
+
 .projects-grid {
     @include flexCenter;
     flex-direction: column;
     gap: 20px;
 
     $min-card-height: 200px;
-    $card-color: #1e40af;
     .project-card {
-        $card-padding: 10px;
-        @include flexCenter;
+        @include flexCenter($justify: left);
         flex-direction: row;
         gap: 30px;
         min-height: 200px;
         height: auto;
         margin-top: auto;
+        width: 90vw;
+        max-width: 1000px;
 
         border: 2px outset $card-color;
         background-color: rgba($card-color, 0.25);
@@ -44,16 +60,13 @@
         }
 
         .project-content {
-            h3::after {
-                content: "";
-                @include faded-underline($color-text-secondary);
+            @extend .card-content;
+            align-items: flex-start;
+
+            @include mobile {
+                align-items: center;
             }
-            
-            p {
-                text-align: left;
-                margin-bottom: 10px;
-            }
-            
+
             .btn-grid {
                 display: flex;
                 margin-right: auto;
@@ -68,7 +81,7 @@
                 }
                 button {
                     @extend .btn;
-                    background-color: #1e40af;
+                    background-color: $card-color;
 
                     &:hover {
                         background-color: #0b216e;
@@ -101,22 +114,38 @@
 
     .modal-card {
         width: 600px;
-        height: 600px;
         max-width: 80vw;
-        max-height: 60vh;
-        background-color: $color-text-muted;
+        max-height: calc(100vh - 150px);
+        padding: 10px;
+        margin-top: 50px;
+        background-color: $card-color;
+        border: $border;
+        border-radius: 20px;
         position: relative;
+        overflow-y: auto;
 
         .close-modal-btn {
             position: absolute;
             top: 10px;
             right: 15px;
             cursor: pointer;
-            color: #555;
+            color: $color-text-muted;
             transition: color 0.3s;
+            background-color: transparent;
+            border: transparent;
 
             &:hover {
                 color: #000;
+            }
+        }
+
+        .modal-content {
+            @extend .card-content;
+
+            a {
+                display: inline-block;
+                text-decoration: none;
+                color: $color-text;
             }
         }
     }
