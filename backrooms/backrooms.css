@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #c3cb6e;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    border-bottom: 5px ridge rgb(107, 143, 9);
+    padding: 20px 0;
+}
+
+footer {
+    text-align: right;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.howl {
+    display: flex;
+    justify-content: center;
+}
+.howl img {
+    position: fixed;
+    animation: dancing 1s linear  infinite;
+}
+@keyframes dancing {
+    0% {
+        transform: translate(0, 0px) rotate(0deg);
+    }
+    25% {
+        transform: translate(0, 5px) rotate(5deg);
+    }
+    50% {
+        transform: translate(0, 0px)rotate(0deg);
+    }
+    75% {
+        transform: translate(0, 5px) rotate(-5deg);
+    }
+}
+.smile {
+    display: flex;
+    justify-content: center;
+}
+.smile img {
+    position: fixed;
+    animation: smile 30s ease-in-out  infinite;
+}
+@keyframes smile {
+    0% {
+        transform: translateY(9999px);
+    }
+    99% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(5);
+    }
+}
