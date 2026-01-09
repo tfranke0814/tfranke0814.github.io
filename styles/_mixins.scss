@@ -1,0 +1,47 @@
+// Mixins
+@use "./variables" as *;
+
+@mixin flexCenter($justify: center, $text: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+    text-align: $text;
+}
+
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin faded-edge($height: 150px) {
+    @include flexCenter;
+    position: relative;
+    height: $height;
+    max-width: 80vw;
+    margin: 0 auto;
+    overflow: clip;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-shadow: inset 160px 0px 60px -60px $color-bg, 
+                    inset -160px 0px 60px -60px $color-bg, 
+                    inset 0px 2px 3px 1px $color-bg,
+                    inset 0px -2px 3px 1px $color-bg;
+        z-index: 1;
+    }
+}
+
+@mixin faded-underline($color, $height: 4px, $spacing: 6px, $spread: 30%) {
+  $end-stop: 100% - $spread;
+  display: block;
+  height: $height;
+  margin: 0 auto;
+  margin-top: $spacing;
+  margin-bottom: 15px;
+  max-width: 700px;
+  background: linear-gradient(to right, transparent, $color $spread, $color $end-stop, transparent);
+}
