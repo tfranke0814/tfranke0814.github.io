@@ -1,8 +1,7 @@
 .sticky-header {
   position: fixed;
   background: rgba(10, 15, 28, 0.8);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(107, 115, 123, 0.4);
   transition: all 0.3s ease;
   width: 100%;
@@ -403,8 +402,7 @@ footer {
   position: fixed;
   top: 0;
   left: 0;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   background: rgba(0, 0, 0, 0.6);
   width: 100vw;
   height: 100vh;
@@ -469,42 +467,41 @@ body button {
   font-size: 1em;
 }
 
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background: linear-gradient(135deg, #1e40af 0%, #1a0336 90%);
-  height: 200px;
-  border-bottom: 1px solid rgba(107, 115, 123, 0.4);
-}
-header h1 {
-  font-size: 2.5rem;
-}
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 2rem;
-  }
-}
-header p {
-  font-size: 1.2rem;
-  color: rgb(148, 163, 184);
-  text-indent: 0%;
-}
-@media (max-width: 768px) {
-  header p {
-    font-size: 1rem;
-  }
-}
-
-.container, .header-container {
+.container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.header-container {
-  margin-top: 55px;
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #1e40af 0%, #1a0336 90%);
+  width: 100vw;
+  height: 150px;
+  border-bottom: 1px solid rgba(107, 115, 123, 0.4);
+  padding-top: 55px;
+  padding-bottom: 15px;
+}
+.hero h1 {
+  font-size: 2.5rem;
+}
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+.hero p {
+  font-size: 1.2rem;
+  color: rgb(148, 163, 184);
+  text-indent: 0%;
+}
+@media (max-width: 768px) {
+  .hero p {
+    font-size: 1rem;
+  }
 }
 
 section {
