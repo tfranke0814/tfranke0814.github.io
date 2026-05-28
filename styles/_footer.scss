@@ -20,8 +20,8 @@ footer {
     gap: 20px;
 
     a {
+        @include transEase();
         color: $color-text-footer;
-        transition: color 0.3s ease;
         width: 25px;
         height: 25px;
         border-radius: 50%; 

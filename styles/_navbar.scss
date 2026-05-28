@@ -2,11 +2,12 @@
 @use "./mixins" as *;
 // Navbar
 .sticky-header {
+    @include transEase();
+    
     position: fixed;
     background: rgba($color-navbar-bg, 0.80);
     backdrop-filter: blur(10px);
     border-bottom: $border;
-    transition: all 0.3s ease;
     width: 100%;
     z-index: 1000;
 
@@ -52,11 +53,12 @@
         }
     }
     a{
+        @include transEase();
+
         text-decoration: none;
         color: $color-text-muted;
         padding: 8px 16px;
         border-radius: 8px;
-        transition: all 0.3s ease;
         font-size: 0.95rem;
         
         &.active{
@@ -114,10 +116,10 @@
 // Logo
 .logo {
     @include flexCenter;
+    @include transEase();
 
     gap: 12px;
     text-decoration: none;
-    transition: transform 0.3s ease;
 
     &:hover {
         transform: translateX(5px);

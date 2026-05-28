@@ -79,10 +79,10 @@
     flex-direction: column;
     a {
         @include homeNavFont(linear-gradient(135deg, #1e40af 10%, $color-bg 80%));
+        @include transEase();
         text-decoration: none;
         font-size: x-large;
         margin-bottom: 10px;
-        transition: all 0.3s ease;
 
         &:hover {
         transform: translateX(4px);

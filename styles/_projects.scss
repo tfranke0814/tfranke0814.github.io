@@ -73,9 +73,10 @@ $card-padding: 10px;
                 gap: 10px;
                 
                 .btn {
+                    @include transEase();
+                    
                     border: $border;
                     border-radius: 5px;
-                    transition: background 0.3s;
                     padding: 8px 16px;
                     color: $color-text;
                 }
@@ -125,12 +126,13 @@ $card-padding: 10px;
         overflow-y: auto;
 
         .close-modal-btn {
+            @include transEase();
+
             position: absolute;
             top: 10px;
             right: 15px;
             cursor: pointer;
             color: $color-text-muted;
-            transition: color 0.3s;
             background-color: transparent;
             border: transparent;
 
