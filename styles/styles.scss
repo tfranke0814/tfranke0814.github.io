@@ -12,7 +12,7 @@
 }
 
 body {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: $font-primary;
     line-height: 1.6;
     color: $color-text;
     background: $color-bg;
@@ -36,6 +36,7 @@ body {
     @include flexCenter;
     
     background: $gradient-scheme;
+    font-family: $font-secondary;
     width: 100vw;
     height: 150px;
     border-bottom: $border;

@@ -2,7 +2,7 @@
 @use "./mixins" as *;
 
 @mixin homeNavFont($bg: linear-gradient(135deg, #1e40af 10%, $color-bg 50%, #1e40af 90%)) {
-    font-family: "Brush Script MT", "Brush Script Std", cursive;
+    font-family: $font-secondary;
     font-style: italic;
     padding: 0 10px;
     border-radius: 50px;
@@ -32,6 +32,7 @@
     flex-direction: column;
     max-width: 700px;
     text-align: center;
+    margin-top: 20px;
     margin-bottom: 50px;
 
     .home-banner-bg {

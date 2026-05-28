@@ -206,6 +206,7 @@ footer {
   flex-direction: column;
   max-width: 700px;
   text-align: center;
+  margin-top: 20px;
   margin-bottom: 50px;
 }
 .home-banner .home-banner-bg {
@@ -479,6 +480,7 @@ body button {
   align-items: center;
   text-align: center;
   background: linear-gradient(135deg, #1e40af 0%, #1a0336 90%);
+  font-family: "Brush Script MT", "Brush Script Std", cursive;
   width: 100vw;
   height: 150px;
   border-bottom: 1px solid rgba(107, 115, 123, 0.4);
