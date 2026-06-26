@@ -15,7 +15,6 @@ const projectGroups = [
 renderProjectTabs();
 
 Promise.all(projectGroups.flatMap(group => group.projects).map(fetchProject))
-    .then(initModals)
     .catch(err => console.error("Error initializing project page:", err));
 
 function renderProjectTabs() {
@@ -96,40 +95,4 @@ function fetchProject(name) {
             if (target) target.innerHTML = html;
         })
         .catch(err => console.error(`Error loading project ${name}:`, err));
-}
-
-// Project Modals
-function initModals() {
-    const readMoreBtns = document.querySelectorAll(".read-more-btn");
-    const closeModalBtns = document.querySelectorAll(".close-modal-btn");
-
-    readMoreBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-            const modal = document.getElementById(`${btn.id}-modal`);
-            if (modal) modal.classList.remove("hidden");
-        });
-    });
-
-    closeModalBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-            const modal = document.getElementById(`${btn.id}-modal`);
-            if (modal) modal.classList.add("hidden");
-        });
-    });
-
-    document.addEventListener("click", (event) => {
-        const visibleModals = document.querySelectorAll(".project-modal:not(.hidden)");
-        visibleModals.forEach(modal => {
-            if (event.target === modal) modal.classList.add("hidden");
-        });
-    });
-
-    document.addEventListener("keydown", (event) => {
-        if (event.key !== "Escape") return;
-
-        const visibleModals = document.querySelectorAll(".project-modal:not(.hidden)");
-        visibleModals.forEach(modal => {
-            modal.classList.add("hidden");
-        });
-    });
 }
