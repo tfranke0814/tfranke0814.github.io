@@ -293,6 +293,41 @@ footer {
   transform: translateX(4px);
 }
 
+.projects-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.projects-tab {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(107, 115, 123, 0.4);
+  border-radius: 999px;
+  padding: 10px 20px;
+  color: rgb(238, 238, 238);
+  background: rgba(30, 64, 175, 0.12);
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+}
+.projects-tab:hover, .projects-tab.is-active {
+  background: #1e40af;
+}
+
+.projects-panels {
+  width: 100%;
+}
+
+.projects-panel {
+  width: 100%;
+}
+.projects-panel[hidden] {
+  display: none;
+}
+
 .card-content, .project-modal .modal-card .modal-content, .projects-grid .project-card .project-content {
   display: flex;
   flex-direction: column;
@@ -319,6 +354,7 @@ footer {
   text-align: center;
   flex-direction: column;
   gap: 20px;
+  width: 100%;
 }
 .projects-grid .project-card {
   display: flex;

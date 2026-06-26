@@ -3,6 +3,43 @@
 
 $card-color: #1e40af;
 $card-padding: 10px;
+
+.projects-tabs {
+    @include flexCenter;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.projects-tab {
+    @include transEase();
+
+    border: $border;
+    border-radius: 999px;
+    padding: 10px 20px;
+    color: $color-text;
+    background: rgba($card-color, 0.12);
+    cursor: pointer;
+    font-family: $btn-font;
+
+    &:hover,
+    &.is-active {
+        background: $card-color;
+    }
+}
+
+.projects-panels {
+    width: 100%;
+}
+
+.projects-panel {
+    width: 100%;
+
+    &[hidden] {
+        display: none;
+    }
+}
+
 .card-content {
     display: flex;flex-direction:column;
             
@@ -21,6 +58,7 @@ $card-padding: 10px;
     @include flexCenter;
     flex-direction: column;
     gap: 20px;
+    width: 100%;
 
     $min-card-height: 200px;
     .project-card {

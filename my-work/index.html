@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -13,7 +13,7 @@
       <section>
         <div class="hero">
           <div class="container">
-            <h1>My Projects</h1>
+            <h1>My Work</h1>
             <p>A showcase of my work and achievements</p>
           </div>
         </div>
@@ -21,12 +21,14 @@
 
       <section>
         <div class="container">
-          <div class="projects-grid">
-            
-            <div id="optcg-analyzer"></div>
-            <div id="econ-forecast"></div>
-            <div id="sir-implementation"></div>
-            
+          <div
+            id="project-tabs"
+            class="projects-tabs"
+            role="tablist"
+            aria-label="Project categories"
+          ></div>
+          <div id="project-panels" class="projects-panels"></div>
+        </div>
       </section>
     </main>
 
