@@ -18,6 +18,49 @@
     transition: $properties $duration $timing;
 }
 
+$color-grad-nav-animation: linear-gradient(135deg, $color-grad-primary 10%, $color-bg 70%, $color-grad-primary 90%);
+$color-grad-nav: linear-gradient(135deg, $color-grad-primary 10%, $color-bg 80%);
+$color-grad-nav-active: mix($color-grad-secondary, $color-grad-primary, 70%);
+$color-grad-nav-light: linear-gradient(
+    135deg, 
+    $color-grad-nav-active, 
+    $color-bg 80%
+);
+$color-grad-nav-animation-light: linear-gradient(
+    135deg, 
+    $color-grad-nav-active 10%, 
+    $color-bg 70%, 
+    $color-grad-nav-active 90%
+);
+@mixin btnNavFont($font: $font-secondary, $bg: $color-grad-nav) {
+    font-family: $font;
+    font-style: italic;
+    padding: 0 10px;
+    border-radius: 50px;
+    background: $bg;
+    background-position: center;
+    background-size: 150% 100%;
+    box-shadow: 0px 4px 10px $color-shadow;
+    border: 4px double $color-bg;
+    color: $color-text
+}
+@mixin btnNavFontAnimated($font: $font-secondary, $bg: $color-grad-nav-animation) {
+    @include btnNavFont($font: $font, $bg: $bg);
+    background-size: 400% 100%;
+    animation: gradient-animation 20s ease infinite;
+    @keyframes gradient-animation {
+        0% {
+            background-position: 0%; /* Start at the left */
+        }
+        50% {
+            background-position: 100%; /* Move to the right */
+        }
+        100% {
+            background-position: 0%; /* Return to the start for a seamless loop */
+        }
+    }
+}
+
 @mixin faded-edge($height: 150px) {
     @include flexCenter;
     position: relative;

@@ -241,22 +241,19 @@ footer {
   border: 2px ridge darksalmon;
 }
 .home-banner h1 {
-  font-family: "Brush Script MT", "Brush Script Std", cursive;
+  font-family: "Courier New", Courier, monospace;
   font-style: italic;
   padding: 0 10px;
   border-radius: 50px;
-  background: linear-gradient(135deg, #1e40af 10%, #0f172a 50%, #1e40af 90%);
+  background: linear-gradient(135deg, #1e40af 10%, #0f172a 70%, #1e40af 90%);
+  background-position: center;
+  background-size: 150% 100%;
   box-shadow: 0px 4px 10px black;
   border: 4px double #0f172a;
   color: rgb(238, 238, 238);
-  position: absolute;
-  translate: 0 110px;
-  z-index: 4;
-  font-size: xx-large;
   background-size: 400% 100%;
   animation: gradient-animation 20s ease infinite;
 }
-
 @keyframes gradient-animation {
   0% {
     background-position: 0%; /* Start at the left */
@@ -268,6 +265,13 @@ footer {
     background-position: 0%; /* Return to the start for a seamless loop */
   }
 }
+.home-banner h1 {
+  position: absolute;
+  translate: 0 110px;
+  z-index: 4;
+  font-size: xx-large;
+}
+
 .home-nav {
   display: flex;
   justify-content: center;
@@ -276,11 +280,13 @@ footer {
   flex-direction: column;
 }
 .home-nav a {
-  font-family: "Brush Script MT", "Brush Script Std", cursive;
+  font-family: "Courier New", Courier, monospace;
   font-style: italic;
   padding: 0 10px;
   border-radius: 50px;
   background: linear-gradient(135deg, #1e40af 10%, #0f172a 80%);
+  background-position: center;
+  background-size: 150% 100%;
   box-shadow: 0px 4px 10px black;
   border: 4px double #0f172a;
   color: rgb(238, 238, 238);
@@ -305,27 +311,93 @@ footer {
 
 .projects-tab {
   transition: all 0.3s ease;
-  border: 1px solid rgba(107, 115, 123, 0.4);
-  border-radius: 999px;
-  padding: 10px 20px;
-  color: rgb(238, 238, 238);
-  background: rgba(30, 64, 175, 0.12);
-  cursor: pointer;
   font-family: "Courier New", Courier, monospace;
+  font-style: italic;
+  padding: 0 10px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #1e40af 10%, #0f172a 80%);
+  background-position: center;
+  background-size: 150% 100%;
+  box-shadow: 0px 4px 10px black;
+  border: 4px double #0f172a;
+  color: rgb(238, 238, 238);
+  padding: 10px 20px;
+  cursor: pointer;
 }
-.projects-tab:hover, .projects-tab.is-active {
-  background: #1e40af;
+.projects-tab:hover {
+  font-family: "Courier New", Courier, monospace;
+  font-style: italic;
+  padding: 0 10px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #1e40af 10%, #0f172a 70%, #1e40af 90%);
+  background-position: center;
+  background-size: 150% 100%;
+  box-shadow: 0px 4px 10px black;
+  border: 4px double #0f172a;
+  color: rgb(238, 238, 238);
+  background-size: 400% 100%;
+  animation: gradient-animation 20s ease infinite;
+}
+@keyframes gradient-animation {
+  0% {
+    background-position: 0%; /* Start at the left */
+  }
+  50% {
+    background-position: 100%; /* Move to the right */
+  }
+  100% {
+    background-position: 0%; /* Return to the start for a seamless loop */
+  }
+}
+.projects-tab:hover {
+  padding: 10px 20px;
+  transition: all 3s ease;
+}
+.projects-tab.is-active {
+  font-family: "Courier New", Courier, monospace;
+  font-style: italic;
+  padding: 0 10px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, rgb(27.2, 21.3, 90.3), #0f172a 80%);
+  background-position: center;
+  background-size: 150% 100%;
+  box-shadow: 0px 4px 10px black;
+  border: 4px double #0f172a;
+  color: rgb(238, 238, 238);
+  padding: 10px 20px;
+}
+.projects-tab.is-active:hover {
+  font-family: "Courier New", Courier, monospace;
+  font-style: italic;
+  padding: 0 10px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, rgb(27.2, 21.3, 90.3) 10%, #0f172a 70%, rgb(27.2, 21.3, 90.3) 90%);
+  background-position: center;
+  background-size: 150% 100%;
+  box-shadow: 0px 4px 10px black;
+  border: 4px double #0f172a;
+  color: rgb(238, 238, 238);
+  background-size: 400% 100%;
+  animation: gradient-animation 20s ease infinite;
+}
+@keyframes gradient-animation {
+  0% {
+    background-position: 0%; /* Start at the left */
+  }
+  50% {
+    background-position: 100%; /* Move to the right */
+  }
+  100% {
+    background-position: 0%; /* Return to the start for a seamless loop */
+  }
+}
+.projects-tab.is-active:hover {
+  padding: 10px 20px;
+  transition: all 3s ease;
 }
 
 .projects-panels {
   width: 100%;
-}
-
-.projects-panel {
-  width: 100%;
-}
-.projects-panel[hidden] {
-  display: none;
 }
 
 .card-content, .projects-grid .project-card .project-content {
@@ -340,7 +412,7 @@ footer {
   margin-top: 6px;
   margin-bottom: 15px;
   max-width: 700px;
-  background: linear-gradient(to right, transparent, #60a5fa 30%, #60a5fa 70%, transparent);
+  background: linear-gradient(to right, transparent, #1e40af 30%, #1e40af 70%, transparent);
 }
 .card-content p, .projects-grid .project-card .project-content p {
   text-align: left;
@@ -355,6 +427,11 @@ footer {
   flex-direction: column;
   gap: 20px;
   width: 100%;
+  background-color: rgba(27.2, 21.3, 90.3, 0.5);
+  padding: 30px;
+  border: 2px outset rgba(27.2, 21.3, 90.3, 0.5);
+  border-radius: 15px;
+  box-shadow: 4px 4px 10px 4px black;
 }
 .projects-grid .project-card {
   display: flex;
@@ -365,8 +442,7 @@ footer {
   gap: 30px;
   min-height: 200px;
   height: auto;
-  margin-top: auto;
-  width: 90vw;
+  margin: auto;
   max-width: 1000px;
   border: 2px outset #1e40af;
   background-color: rgba(30, 64, 175, 0.25);
@@ -384,7 +460,6 @@ footer {
 }
 .projects-grid .project-card .project-img img {
   height: 180px;
-  width: 180px;
   overflow: hidden;
   -o-object-fit: cover;
      object-fit: cover;
@@ -467,7 +542,7 @@ body button {
   align-items: center;
   text-align: center;
   background: linear-gradient(135deg, #1e40af 0%, #1a0336 90%);
-  font-family: "Brush Script MT", "Brush Script Std", cursive;
+  font-family: "Courier New", Courier, monospace;
   width: 100vw;
   height: 150px;
   border-bottom: 1px solid rgba(107, 115, 123, 0.4);

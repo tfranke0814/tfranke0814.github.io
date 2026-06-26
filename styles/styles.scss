@@ -3,7 +3,7 @@
 @use "./navbar";
 @use "./footer";
 @use "./home";
-@use "./projects";
+@use "./my-work";
 
 * {
     margin: 0;
@@ -21,7 +21,7 @@ body {
     min-height: 100vh;
     
     button {
-        font-family: $btn-font;
+        font-family: $font-secondary;
         font-size: 1em;
     }
 }
@@ -34,7 +34,7 @@ body {
 
 .hero {
     @include flexCenter;
-    
+
     background: $gradient-scheme;
     font-family: $font-secondary;
     width: 100vw;

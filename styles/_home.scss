@@ -1,17 +1,6 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
-@mixin homeNavFont($bg: linear-gradient(135deg, #1e40af 10%, $color-bg 50%, #1e40af 90%)) {
-    font-family: $font-secondary;
-    font-style: italic;
-    padding: 0 10px;
-    border-radius: 50px;
-    background: $bg;
-    box-shadow: 0px 4px 10px $color-shadow;
-    border: 4px double $color-bg;
-    color: $color-text
-}
-
 .img-round {
     @include flexCenter;
     border-radius: 50%;
@@ -53,33 +42,19 @@
         border: 2px ridge darksalmon;
     }
     h1 {
-        @include homeNavFont();
+        @include btnNavFontAnimated();
         position: absolute;
         translate: 0 110px;
         z-index: 4;
         font-size: xx-large;
-        background-size: 400% 100%;
-
-        animation: gradient-animation 20s ease infinite;
     }
-}
-@keyframes gradient-animation {
-  0% {
-    background-position: 0%; /* Start at the left */
-  }
-  50% {
-    background-position: 100%; /* Move to the right */
-  }
-  100% {
-    background-position: 0%; /* Return to the start for a seamless loop */
-  }
 }
 
 .home-nav {
     @include flexCenter;
     flex-direction: column;
     a {
-        @include homeNavFont(linear-gradient(135deg, #1e40af 10%, $color-bg 80%));
+        @include btnNavFont();
         @include transEase();
         text-decoration: none;
         font-size: x-large;

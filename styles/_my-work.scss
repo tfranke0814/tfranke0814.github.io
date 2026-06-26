@@ -1,7 +1,7 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
-$card-color: #1e40af;
+$card-color: $color-grad-primary;
 $card-padding: 10px;
 
 .projects-tabs {
@@ -12,19 +12,30 @@ $card-padding: 10px;
 }
 
 .projects-tab {
+    $tab-padding: 10px 20px;
     @include transEase();
+    @include btnNavFont($font: $font-secondary);
 
-    border: $border;
-    border-radius: 999px;
-    padding: 10px 20px;
-    color: $color-text;
-    background: rgba($card-color, 0.12);
+    padding: $tab-padding;
+
+    
     cursor: pointer;
-    font-family: $btn-font;
 
-    &:hover,
+    &:hover {
+        @include btnNavFontAnimated($font: $font-secondary); 
+        padding: $tab-padding;
+        @include transEase($duration: 3s);
+    }
+
     &.is-active {
-        background: $card-color;
+        @include btnNavFont($font: $font-secondary, $bg: $color-grad-nav-light);
+        padding: $tab-padding;
+
+        &:hover {
+            @include btnNavFontAnimated($font: $font-secondary, $bg: $color-grad-nav-animation-light);
+            padding: $tab-padding;
+            @include transEase($duration: 3s);
+        }
     }
 }
 
@@ -32,20 +43,13 @@ $card-padding: 10px;
     width: 100%;
 }
 
-.projects-panel {
-    width: 100%;
-
-    &[hidden] {
-        display: none;
-    }
-}
-
 .card-content {
-    display: flex;flex-direction:column;
+    display: flex;
+    flex-direction:column;
             
     h3::after {
         content: "";
-        @include faded-underline($color-text-secondary);
+        @include faded-underline($color-grad-primary);
     }
             
     p {
@@ -59,6 +63,12 @@ $card-padding: 10px;
     flex-direction: column;
     gap: 20px;
     width: 100%;
+    background-color: rgba($color-grad-nav-active, 0.5);
+    padding: 30px;
+
+    border: 2px outset rgba($color-grad-nav-active, 0.5);
+    border-radius: 15px;
+    box-shadow: 4px 4px 10px 4px $color-shadow;
 
     $min-card-height: 200px;
     .project-card {
@@ -67,8 +77,7 @@ $card-padding: 10px;
         gap: 30px;
         min-height: 200px;
         height: auto;
-        margin-top: auto;
-        width: 90vw;
+        margin: auto;
         max-width: 1000px;
 
         border: 2px outset $card-color;
@@ -86,7 +95,6 @@ $card-padding: 10px;
             padding: $img-padding;
             img {
                 height: ($min-card-height - $card-padding - $img-padding);
-                width: ($min-card-height - $card-padding - $img-padding);
                 overflow: hidden;
                 object-fit: cover;
                 border-radius: 15px;
@@ -130,7 +138,7 @@ $card-padding: 10px;
                     @extend .btn;
                     text-decoration: none;
                     background: #374151;
-                    font-family: $btn-font;
+                    font-family: $font-secondary;
                     
                     &:hover {
                         background: #1f2937;
