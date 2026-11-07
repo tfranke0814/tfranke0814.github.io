@@ -27,6 +27,13 @@
 }
 
 // Home page
+.home-banner-container {
+    @extend .container;
+    @media (max-width: 500px) {
+        padding: 0;
+    }
+}
+
 .home-banner {
     @include flexCenter;
     flex-direction: column;
@@ -37,6 +44,14 @@
 
     .home-banner-bg {
         @include faded-edge($home-banner-height);
+        @media (max-width: 500px) {
+            min-width: 100vw;
+            &::after {
+                box-shadow: inset 0px 2px 3px 1px $color-bg,
+                            inset 0px -2px 3px 1px $color-bg;
+            }
+        
+        }
 
         img {
         width: 100%;
@@ -61,6 +76,10 @@
         background-size: 400% 100%;
 
         animation: gradient-animation 20s ease infinite;
+
+        @include mobile() {
+            font-size: x-large;
+        }
     }
 }
 @keyframes gradient-animation {

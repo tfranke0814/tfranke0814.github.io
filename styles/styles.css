@@ -18,6 +18,7 @@
   align-items: center;
   text-align: left;
   padding: 10px 0;
+  max-width: 85vw;
 }
 @media (max-width: 768px) {
   .header-content nav {
@@ -198,6 +199,12 @@ footer {
   display: block;
 }
 
+@media (max-width: 500px) {
+  .home-banner-container {
+    padding: 0;
+  }
+}
+
 .home-banner {
   display: flex;
   justify-content: center;
@@ -228,6 +235,14 @@ footer {
   box-shadow: inset 160px 0px 60px -60px #0f172a, inset -160px 0px 60px -60px #0f172a, inset 0px 2px 3px 1px #0f172a, inset 0px -2px 3px 1px #0f172a;
   z-index: 1;
 }
+@media (max-width: 500px) {
+  .home-banner .home-banner-bg {
+    min-width: 100vw;
+  }
+  .home-banner .home-banner-bg::after {
+    box-shadow: inset 0px 2px 3px 1px #0f172a, inset 0px -2px 3px 1px #0f172a;
+  }
+}
 .home-banner .home-banner-bg img {
   width: 100%;
   height: auto;
@@ -255,6 +270,11 @@ footer {
   font-size: xx-large;
   background-size: 400% 100%;
   animation: gradient-animation 20s ease infinite;
+}
+@media (max-width: 768px) {
+  .home-banner h1 {
+    font-size: x-large;
+  }
 }
 
 @keyframes gradient-animation {
