@@ -18,6 +18,12 @@
     transition: $properties $duration $timing;
 }
 
+@mixin container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 $color-grad-nav-animation: linear-gradient(135deg, $color-grad-primary 10%, $color-bg 70%, $color-grad-primary 90%);
 $color-grad-nav: linear-gradient(135deg, $color-grad-primary 10%, $color-bg 80%);
 $color-grad-nav-active: mix($color-grad-secondary, $color-grad-primary, 70%);
@@ -42,7 +48,8 @@ $color-grad-nav-animation-light: linear-gradient(
     background-size: 150% 100%;
     box-shadow: 0px 4px 10px $color-shadow;
     border: 4px double $color-bg;
-    color: $color-text
+    color: $color-text;
+    max-width: 95vw;
 }
 @mixin btnNavFontAnimated($font: $font-secondary, $bg: $color-grad-nav-animation) {
     @include btnNavFont($font: $font, $bg: $bg);

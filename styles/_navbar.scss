@@ -19,6 +19,7 @@
 .header-content {
    @include flexCenter($justify: space-between, $text: left);
     padding: 10px 0;
+    max-width: 85vw;
 
     // Nav
     nav {

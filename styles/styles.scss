@@ -27,16 +27,14 @@ body {
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    @include container;
 }
 
 .hero {
     @include flexCenter;
 
     background: $gradient-scheme;
-    font-family: $font-secondary;
+    font-family: $font-primary;
     width: 100vw;
     height: 150px;
     border-bottom: $border;

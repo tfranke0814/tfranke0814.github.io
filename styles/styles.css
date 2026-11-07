@@ -18,6 +18,7 @@
   align-items: center;
   text-align: left;
   padding: 10px 0;
+  max-width: 85vw;
 }
 @media (max-width: 768px) {
   .header-content nav {
@@ -198,6 +199,17 @@ footer {
   display: block;
 }
 
+.home-banner-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+@media (max-width: 500px) {
+  .home-banner-container {
+    padding: 0;
+  }
+}
+
 .home-banner {
   display: flex;
   justify-content: center;
@@ -228,6 +240,14 @@ footer {
   box-shadow: inset 160px 0px 60px -60px #0f172a, inset -160px 0px 60px -60px #0f172a, inset 0px 2px 3px 1px #0f172a, inset 0px -2px 3px 1px #0f172a;
   z-index: 1;
 }
+@media (max-width: 500px) {
+  .home-banner .home-banner-bg {
+    min-width: 100vw;
+  }
+  .home-banner .home-banner-bg::after {
+    box-shadow: inset 0px 2px 3px 1px #0f172a, inset 0px -2px 3px 1px #0f172a;
+  }
+}
 .home-banner .home-banner-bg img {
   width: 100%;
   height: auto;
@@ -251,6 +271,7 @@ footer {
   box-shadow: 0px 4px 10px black;
   border: 4px double #0f172a;
   color: rgb(238, 238, 238);
+  max-width: 95vw;
   background-size: 400% 100%;
   animation: gradient-animation 20s ease infinite;
 }
@@ -271,6 +292,11 @@ footer {
   z-index: 4;
   font-size: xx-large;
 }
+@media (max-width: 768px) {
+  .home-banner h1 {
+    font-size: x-large;
+  }
+}
 
 .home-nav {
   display: flex;
@@ -290,10 +316,16 @@ footer {
   box-shadow: 0px 4px 10px black;
   border: 4px double #0f172a;
   color: rgb(238, 238, 238);
+  max-width: 95vw;
   transition: all 0.3s ease;
   text-decoration: none;
   font-size: x-large;
   margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+  .home-nav a {
+    font-size: large;
+  }
 }
 .home-nav a:hover {
   transform: translateX(4px);
@@ -321,6 +353,7 @@ footer {
   box-shadow: 0px 4px 10px black;
   border: 4px double #0f172a;
   color: rgb(238, 238, 238);
+  max-width: 95vw;
   padding: 10px 20px;
   cursor: pointer;
 }
@@ -335,6 +368,7 @@ footer {
   box-shadow: 0px 4px 10px black;
   border: 4px double #0f172a;
   color: rgb(238, 238, 238);
+  max-width: 95vw;
   background-size: 400% 100%;
   animation: gradient-animation 20s ease infinite;
 }
@@ -364,6 +398,7 @@ footer {
   box-shadow: 0px 4px 10px black;
   border: 4px double #0f172a;
   color: rgb(238, 238, 238);
+  max-width: 95vw;
   padding: 10px 20px;
 }
 .projects-tab.is-active:hover {
@@ -377,6 +412,7 @@ footer {
   box-shadow: 0px 4px 10px black;
   border: 4px double #0f172a;
   color: rgb(238, 238, 238);
+  max-width: 95vw;
   background-size: 400% 100%;
   animation: gradient-animation 20s ease infinite;
 }
@@ -542,7 +578,7 @@ body button {
   align-items: center;
   text-align: center;
   background: linear-gradient(135deg, #1e40af 0%, #1a0336 90%);
-  font-family: "Courier New", Courier, monospace;
+  font-family: Georgia, "Times New Roman", Times, serif;
   width: 100vw;
   height: 150px;
   border-bottom: 1px solid rgba(107, 115, 123, 0.4);

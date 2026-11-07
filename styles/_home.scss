@@ -16,6 +16,13 @@
 }
 
 // Home page
+.home-banner-container {
+    @include container;
+    @media (max-width: 500px) {
+        padding: 0;
+    }
+}
+
 .home-banner {
     @include flexCenter;
     flex-direction: column;
@@ -26,6 +33,14 @@
 
     .home-banner-bg {
         @include faded-edge($home-banner-height);
+        @media (max-width: 500px) {
+            min-width: 100vw;
+            &::after {
+                box-shadow: inset 0px 2px 3px 1px $color-bg,
+                            inset 0px -2px 3px 1px $color-bg;
+            }
+        
+        }
 
         img {
         width: 100%;
@@ -47,6 +62,10 @@
         translate: 0 110px;
         z-index: 4;
         font-size: xx-large;
+
+        @include mobile() {
+            font-size: x-large;
+        }
     }
 }
 
@@ -60,8 +79,12 @@
         font-size: x-large;
         margin-bottom: 10px;
 
+        @include mobile {
+            font-size: large;
+        }
+
         &:hover {
-        transform: translateX(4px);
-    }
+            transform: translateX(4px);
+        }
     }
 }
