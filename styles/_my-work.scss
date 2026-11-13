@@ -125,23 +125,23 @@ $card-padding: 10px;
                     border-radius: 5px;
                     padding: 8px 16px;
                     color: $color-text;
-                }
-                button {
-                    @extend .btn;
-                    background-color: $card-color;
-
-                    &:hover {
-                        background-color: #0b216e;
-                    }
-                }
-                a {
-                    @extend .btn;
                     text-decoration: none;
+                }
+                .btn-primary {
+                    @extend .btn;
                     background: #374151;
                     font-family: $font-secondary;
                     
                     &:hover {
                         background: #1f2937;
+                    }
+                }
+                .btn-secondary {
+                    @extend .btn;
+                    background-color: $card-color;
+
+                    &:hover {
+                        background-color: #0b216e;
                     }
                 }
             }

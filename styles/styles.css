@@ -520,26 +520,26 @@ footer {
   margin-right: auto;
   gap: 10px;
 }
-.projects-grid .project-card .project-content .btn-grid .btn, .projects-grid .project-card .project-content .btn-grid a, .projects-grid .project-card .project-content .btn-grid button {
+.projects-grid .project-card .project-content .btn-grid .btn, .projects-grid .project-card .project-content .btn-grid .btn-secondary, .projects-grid .project-card .project-content .btn-grid .btn-primary {
   transition: all 0.3s ease;
   border: 1px solid rgba(107, 115, 123, 0.4);
   border-radius: 5px;
   padding: 8px 16px;
   color: rgb(238, 238, 238);
-}
-.projects-grid .project-card .project-content .btn-grid button {
-  background-color: #1e40af;
-}
-.projects-grid .project-card .project-content .btn-grid button:hover {
-  background-color: #0b216e;
-}
-.projects-grid .project-card .project-content .btn-grid a {
   text-decoration: none;
+}
+.projects-grid .project-card .project-content .btn-grid .btn-primary {
   background: #374151;
   font-family: "Courier New", Courier, monospace;
 }
-.projects-grid .project-card .project-content .btn-grid a:hover {
+.projects-grid .project-card .project-content .btn-grid .btn-primary:hover {
   background: #1f2937;
+}
+.projects-grid .project-card .project-content .btn-grid .btn-secondary {
+  background-color: #1e40af;
+}
+.projects-grid .project-card .project-content .btn-grid .btn-secondary:hover {
+  background-color: #0b216e;
 }
 
 .hidden {

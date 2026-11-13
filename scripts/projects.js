@@ -1,14 +1,19 @@
 // Scripts for projects page
 const projectGroups = [
     {
-        id: "podcast",
-        label: "Podcast",
-        projects: ["optcg-analyzer"],
+        id: "data-comp",
+        label: "Data/Computation",
+        projects: ["sales-modeling", "econ-forecast", "sir-implementation"],
     },
     {
-        id: "game-dev",
-        label: "Game Dev",
-        projects: ["econ-forecast", "sir-implementation"],
+        id: "game-dev", 
+        label: "Game Dev", 
+        projects: ["pong"],
+    },
+    {
+        id: "podcast",
+        label: "Podcast",
+        projects: ["pondtalks"],
     },
 ];
 
