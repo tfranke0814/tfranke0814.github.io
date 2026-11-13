@@ -4,12 +4,14 @@ $color-text-muted: rgb(148, 163, 184);
 $color-text-secondary: #60a5fa;
 $color-bg: #0f172a;
 $color-shadow: black;
-$gradient-scheme: linear-gradient(135deg, #1e40af 0%, #1a0336 90%);
+$color-grad-primary: #1e40af;
+$color-grad-secondary: #1a0336;
+$gradient-scheme: linear-gradient(135deg, $color-grad-primary 0%, $color-grad-secondary 90%);
 // $gradient-scheme: linear-gradient(135deg, #1e40af 0%, #2c133a 70%, rgb(11, 180, 110) 110%);
 $font-primary: Georgia, 'Times New Roman', Times, serif;
-$font-secondary: 'Brush Script MT', 'Brush Script Std', cursive;
+$font-secondary: 'Courier New', Courier, monospace;
+$font-tertiary: 'Brush Script MT', 'Brush Script Std', cursive;
 $border: 1px solid rgba(107, 115, 123, 0.4);
-$btn-font: 'Courier New', Courier, monospace;
 
 // Navbar
 $color-navbar-bg: rgb(10, 15, 28);

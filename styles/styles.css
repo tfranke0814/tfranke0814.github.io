@@ -18,6 +18,7 @@
   align-items: center;
   text-align: left;
   padding: 10px 0;
+  max-width: 85vw;
 }
 @media (max-width: 768px) {
   .header-content nav {
@@ -198,6 +199,17 @@ footer {
   display: block;
 }
 
+.home-banner-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+@media (max-width: 500px) {
+  .home-banner-container {
+    padding: 0;
+  }
+}
+
 .home-banner {
   display: flex;
   justify-content: center;
@@ -228,6 +240,14 @@ footer {
   box-shadow: inset 160px 0px 60px -60px #0f172a, inset -160px 0px 60px -60px #0f172a, inset 0px 2px 3px 1px #0f172a, inset 0px -2px 3px 1px #0f172a;
   z-index: 1;
 }
+@media (max-width: 500px) {
+  .home-banner .home-banner-bg {
+    min-width: 100vw;
+  }
+  .home-banner .home-banner-bg::after {
+    box-shadow: inset 0px 2px 3px 1px #0f172a, inset 0px -2px 3px 1px #0f172a;
+  }
+}
 .home-banner .home-banner-bg img {
   width: 100%;
   height: auto;
@@ -241,22 +261,20 @@ footer {
   border: 2px ridge darksalmon;
 }
 .home-banner h1 {
-  font-family: "Brush Script MT", "Brush Script Std", cursive;
+  font-family: "Courier New", Courier, monospace;
   font-style: italic;
   padding: 0 10px;
   border-radius: 50px;
-  background: linear-gradient(135deg, #1e40af 10%, #0f172a 50%, #1e40af 90%);
+  background: linear-gradient(135deg, #1e40af 10%, #0f172a 70%, #1e40af 90%);
+  background-position: center;
+  background-size: 150% 100%;
   box-shadow: 0px 4px 10px black;
   border: 4px double #0f172a;
   color: rgb(238, 238, 238);
-  position: absolute;
-  translate: 0 110px;
-  z-index: 4;
-  font-size: xx-large;
+  max-width: 95vw;
   background-size: 400% 100%;
   animation: gradient-animation 20s ease infinite;
 }
-
 @keyframes gradient-animation {
   0% {
     background-position: 0%; /* Start at the left */
@@ -268,6 +286,18 @@ footer {
     background-position: 0%; /* Return to the start for a seamless loop */
   }
 }
+.home-banner h1 {
+  position: absolute;
+  translate: 0 110px;
+  z-index: 4;
+  font-size: xx-large;
+}
+@media (max-width: 768px) {
+  .home-banner h1 {
+    font-size: x-large;
+  }
+}
+
 .home-nav {
   display: flex;
   justify-content: center;
@@ -276,28 +306,141 @@ footer {
   flex-direction: column;
 }
 .home-nav a {
-  font-family: "Brush Script MT", "Brush Script Std", cursive;
+  font-family: "Courier New", Courier, monospace;
   font-style: italic;
   padding: 0 10px;
   border-radius: 50px;
   background: linear-gradient(135deg, #1e40af 10%, #0f172a 80%);
+  background-position: center;
+  background-size: 150% 100%;
   box-shadow: 0px 4px 10px black;
   border: 4px double #0f172a;
   color: rgb(238, 238, 238);
+  max-width: 95vw;
   transition: all 0.3s ease;
   text-decoration: none;
   font-size: x-large;
   margin-bottom: 10px;
 }
+@media (max-width: 768px) {
+  .home-nav a {
+    font-size: large;
+  }
+}
 .home-nav a:hover {
   transform: translateX(4px);
 }
 
-.card-content, .project-modal .modal-card .modal-content, .projects-grid .project-card .project-content {
+.projects-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.projects-tab {
+  transition: all 0.3s ease;
+  font-family: "Courier New", Courier, monospace;
+  font-style: italic;
+  padding: 0 10px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #1e40af 10%, #0f172a 80%);
+  background-position: center;
+  background-size: 150% 100%;
+  box-shadow: 0px 4px 10px black;
+  border: 4px double #0f172a;
+  color: rgb(238, 238, 238);
+  max-width: 95vw;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.projects-tab:hover {
+  font-family: "Courier New", Courier, monospace;
+  font-style: italic;
+  padding: 0 10px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #1e40af 10%, #0f172a 70%, #1e40af 90%);
+  background-position: center;
+  background-size: 150% 100%;
+  box-shadow: 0px 4px 10px black;
+  border: 4px double #0f172a;
+  color: rgb(238, 238, 238);
+  max-width: 95vw;
+  background-size: 400% 100%;
+  animation: gradient-animation 20s ease infinite;
+}
+@keyframes gradient-animation {
+  0% {
+    background-position: 0%; /* Start at the left */
+  }
+  50% {
+    background-position: 100%; /* Move to the right */
+  }
+  100% {
+    background-position: 0%; /* Return to the start for a seamless loop */
+  }
+}
+.projects-tab:hover {
+  padding: 10px 20px;
+  transition: all 3s ease;
+}
+.projects-tab.is-active {
+  font-family: "Courier New", Courier, monospace;
+  font-style: italic;
+  padding: 0 10px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, rgb(27.2, 21.3, 90.3), #0f172a 80%);
+  background-position: center;
+  background-size: 150% 100%;
+  box-shadow: 0px 4px 10px black;
+  border: 4px double #0f172a;
+  color: rgb(238, 238, 238);
+  max-width: 95vw;
+  padding: 10px 20px;
+}
+.projects-tab.is-active:hover {
+  font-family: "Courier New", Courier, monospace;
+  font-style: italic;
+  padding: 0 10px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, rgb(27.2, 21.3, 90.3) 10%, #0f172a 70%, rgb(27.2, 21.3, 90.3) 90%);
+  background-position: center;
+  background-size: 150% 100%;
+  box-shadow: 0px 4px 10px black;
+  border: 4px double #0f172a;
+  color: rgb(238, 238, 238);
+  max-width: 95vw;
+  background-size: 400% 100%;
+  animation: gradient-animation 20s ease infinite;
+}
+@keyframes gradient-animation {
+  0% {
+    background-position: 0%; /* Start at the left */
+  }
+  50% {
+    background-position: 100%; /* Move to the right */
+  }
+  100% {
+    background-position: 0%; /* Return to the start for a seamless loop */
+  }
+}
+.projects-tab.is-active:hover {
+  padding: 10px 20px;
+  transition: all 3s ease;
+}
+
+.projects-panels {
+  width: 100%;
+}
+
+.card-content, .projects-grid .project-card .project-content {
   display: flex;
   flex-direction: column;
 }
-.card-content h3::after, .project-modal .modal-card .modal-content h3::after, .projects-grid .project-card .project-content h3::after {
+.card-content h3::after, .projects-grid .project-card .project-content h3::after {
   content: "";
   display: block;
   height: 4px;
@@ -305,9 +448,9 @@ footer {
   margin-top: 6px;
   margin-bottom: 15px;
   max-width: 700px;
-  background: linear-gradient(to right, transparent, #60a5fa 30%, #60a5fa 70%, transparent);
+  background: linear-gradient(to right, transparent, #1e40af 30%, #1e40af 70%, transparent);
 }
-.card-content p, .project-modal .modal-card .modal-content p, .projects-grid .project-card .project-content p {
+.card-content p, .projects-grid .project-card .project-content p {
   text-align: left;
   margin-bottom: 10px;
 }
@@ -319,6 +462,12 @@ footer {
   text-align: center;
   flex-direction: column;
   gap: 20px;
+  width: 100%;
+  background-color: rgba(27.2, 21.3, 90.3, 0.5);
+  padding: 30px;
+  border: 2px outset rgba(27.2, 21.3, 90.3, 0.5);
+  border-radius: 15px;
+  box-shadow: 4px 4px 10px 4px black;
 }
 .projects-grid .project-card {
   display: flex;
@@ -329,8 +478,7 @@ footer {
   gap: 30px;
   min-height: 200px;
   height: auto;
-  margin-top: auto;
-  width: 90vw;
+  margin: auto;
   max-width: 1000px;
   border: 2px outset #1e40af;
   background-color: rgba(30, 64, 175, 0.25);
@@ -348,7 +496,6 @@ footer {
 }
 .projects-grid .project-card .project-img img {
   height: 180px;
-  width: 180px;
   overflow: hidden;
   -o-object-fit: cover;
      object-fit: cover;
@@ -373,75 +520,26 @@ footer {
   margin-right: auto;
   gap: 10px;
 }
-.projects-grid .project-card .project-content .btn-grid .btn, .projects-grid .project-card .project-content .btn-grid a, .projects-grid .project-card .project-content .btn-grid button {
+.projects-grid .project-card .project-content .btn-grid .btn, .projects-grid .project-card .project-content .btn-grid .btn-secondary, .projects-grid .project-card .project-content .btn-grid .btn-primary {
   transition: all 0.3s ease;
   border: 1px solid rgba(107, 115, 123, 0.4);
   border-radius: 5px;
   padding: 8px 16px;
   color: rgb(238, 238, 238);
-}
-.projects-grid .project-card .project-content .btn-grid button {
-  background-color: #1e40af;
-}
-.projects-grid .project-card .project-content .btn-grid button:hover {
-  background-color: #0b216e;
-}
-.projects-grid .project-card .project-content .btn-grid a {
   text-decoration: none;
+}
+.projects-grid .project-card .project-content .btn-grid .btn-primary {
   background: #374151;
   font-family: "Courier New", Courier, monospace;
 }
-.projects-grid .project-card .project-content .btn-grid a:hover {
+.projects-grid .project-card .project-content .btn-grid .btn-primary:hover {
   background: #1f2937;
 }
-
-.project-modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  backdrop-filter: blur(10px);
-  background: rgba(0, 0, 0, 0.6);
-  width: 100vw;
-  height: 100vh;
-}
-.project-modal .modal-card {
-  width: 600px;
-  max-width: 80vw;
-  max-height: calc(100vh - 150px);
-  padding: 10px;
-  margin-top: 50px;
+.projects-grid .project-card .project-content .btn-grid .btn-secondary {
   background-color: #1e40af;
-  border: 1px solid rgba(107, 115, 123, 0.4);
-  border-radius: 20px;
-  position: relative;
-  overflow-y: auto;
 }
-.project-modal .modal-card .close-modal-btn {
-  transition: all 0.3s ease;
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  cursor: pointer;
-  color: rgb(148, 163, 184);
-  background-color: transparent;
-  border: transparent;
-}
-.project-modal .modal-card .close-modal-btn:hover {
-  color: #000;
-}
-.project-modal .modal-card .modal-content a {
-  display: inline-block;
-  text-decoration: none;
-  color: rgb(238, 238, 238);
-}
-
-.x-icon {
-  width: 24px;
-  height: 24px;
+.projects-grid .project-card .project-content .btn-grid .btn-secondary:hover {
+  background-color: #0b216e;
 }
 
 .hidden {
@@ -480,7 +578,7 @@ body button {
   align-items: center;
   text-align: center;
   background: linear-gradient(135deg, #1e40af 0%, #1a0336 90%);
-  font-family: "Brush Script MT", "Brush Script Std", cursive;
+  font-family: Georgia, "Times New Roman", Times, serif;
   width: 100vw;
   height: 150px;
   border-bottom: 1px solid rgba(107, 115, 123, 0.4);

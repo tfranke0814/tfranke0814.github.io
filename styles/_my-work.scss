@@ -1,14 +1,55 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
-$card-color: #1e40af;
+$card-color: $color-grad-primary;
 $card-padding: 10px;
+
+.projects-tabs {
+    @include flexCenter;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.projects-tab {
+    $tab-padding: 10px 20px;
+    @include transEase();
+    @include btnNavFont($font: $font-secondary);
+
+    padding: $tab-padding;
+
+    
+    cursor: pointer;
+
+    &:hover {
+        @include btnNavFontAnimated($font: $font-secondary); 
+        padding: $tab-padding;
+        @include transEase($duration: 3s);
+    }
+
+    &.is-active {
+        @include btnNavFont($font: $font-secondary, $bg: $color-grad-nav-light);
+        padding: $tab-padding;
+
+        &:hover {
+            @include btnNavFontAnimated($font: $font-secondary, $bg: $color-grad-nav-animation-light);
+            padding: $tab-padding;
+            @include transEase($duration: 3s);
+        }
+    }
+}
+
+.projects-panels {
+    width: 100%;
+}
+
 .card-content {
-    display: flex;flex-direction:column;
+    display: flex;
+    flex-direction:column;
             
     h3::after {
         content: "";
-        @include faded-underline($color-text-secondary);
+        @include faded-underline($color-grad-primary);
     }
             
     p {
@@ -21,6 +62,13 @@ $card-padding: 10px;
     @include flexCenter;
     flex-direction: column;
     gap: 20px;
+    width: 100%;
+    background-color: rgba($color-grad-nav-active, 0.5);
+    padding: 30px;
+
+    border: 2px outset rgba($color-grad-nav-active, 0.5);
+    border-radius: 15px;
+    box-shadow: 4px 4px 10px 4px $color-shadow;
 
     $min-card-height: 200px;
     .project-card {
@@ -29,8 +77,7 @@ $card-padding: 10px;
         gap: 30px;
         min-height: 200px;
         height: auto;
-        margin-top: auto;
-        width: 90vw;
+        margin: auto;
         max-width: 1000px;
 
         border: 2px outset $card-color;
@@ -48,7 +95,6 @@ $card-padding: 10px;
             padding: $img-padding;
             img {
                 height: ($min-card-height - $card-padding - $img-padding);
-                width: ($min-card-height - $card-padding - $img-padding);
                 overflow: hidden;
                 object-fit: cover;
                 border-radius: 15px;
@@ -79,8 +125,18 @@ $card-padding: 10px;
                     border-radius: 5px;
                     padding: 8px 16px;
                     color: $color-text;
+                    text-decoration: none;
                 }
-                button {
+                .btn-primary {
+                    @extend .btn;
+                    background: #374151;
+                    font-family: $font-secondary;
+                    
+                    &:hover {
+                        background: #1f2937;
+                    }
+                }
+                .btn-secondary {
                     @extend .btn;
                     background-color: $card-color;
 
@@ -88,73 +144,9 @@ $card-padding: 10px;
                         background-color: #0b216e;
                     }
                 }
-                a {
-                    @extend .btn;
-                    text-decoration: none;
-                    background: #374151;
-                    font-family: $btn-font;
-                    
-                    &:hover {
-                        background: #1f2937;
-                    }
-                }
             }
         }
     }
-}
-
-.project-modal {
-    @include flexCenter;
-    position: fixed;
-    top: 0;
-    left: 0;
-    backdrop-filter: blur(10px);
-    background: rgba(0, 0, 0, 0.6);
-    width: 100vw;
-    height: 100vh;
-
-    .modal-card {
-        width: 600px;
-        max-width: 80vw;
-        max-height: calc(100vh - 150px);
-        padding: 10px;
-        margin-top: 50px;
-        background-color: $card-color;
-        border: $border;
-        border-radius: 20px;
-        position: relative;
-        overflow-y: auto;
-
-        .close-modal-btn {
-            @include transEase();
-
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            cursor: pointer;
-            color: $color-text-muted;
-            background-color: transparent;
-            border: transparent;
-
-            &:hover {
-                color: #000;
-            }
-        }
-
-        .modal-content {
-            @extend .card-content;
-
-            a {
-                display: inline-block;
-                text-decoration: none;
-                color: $color-text;
-            }
-        }
-    }
-}
-.x-icon {
-  width: 24px;
-  height: 24px;
 }
 .hidden {
     display: none;
